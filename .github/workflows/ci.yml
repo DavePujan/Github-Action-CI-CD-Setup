@@ -1,4 +1,5 @@
 name: MERN CI
+
 on: 
   push:
     branches:
@@ -15,17 +16,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-  # backend
+      # backend
       - name: Install backend
         run: npm install --prefix backend
       - name: Test backend
         run: npm test --prefix backend
 
-  # frontend
+      # frontend
       - name: Install frontend
         run: npm install --prefix frontend
       - name: Test frontend
         run: npm test --prefix frontend
+
+      # success message
+      - name: Success
+        run: echo "CI Completed 🎉"
+
 
 # This workflow does:
 # Runs when you push/PR to main
