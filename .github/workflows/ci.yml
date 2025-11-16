@@ -1,0 +1,35 @@
+name: MERN CI
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+  # backend
+      - name: Install backend
+      run: npm install --prefix backend
+      - name: Test backend
+      run: npm test --prefix backend
+
+  # frontend
+      - name: Install frontend
+      run: npm install --prefix frontend
+      - name: Test frontend
+      run: npm test --prefix frontend
+
+# This workflow does:
+# Runs when you push/PR to main
+# Installs backend + frontend
+# Runs test scripts
+# Builds React app
+# Displays CI success badge
