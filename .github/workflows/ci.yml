@@ -33,3 +33,20 @@ jobs:
 # Runs test scripts
 # Builds React app
 # Displays CI success badge
+
+# simple workflow for CI setup
+# name: 
+# on: [push]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Run a one-line script
+#       run: echo Hello, world!
+#     - name: Run a multi-line script
+#       run: |
+#         echo Add other actions to build,
+#         echo test, and deploy your project.
+
+# for more info visit: https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions
